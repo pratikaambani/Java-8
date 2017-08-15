@@ -1,0 +1,90 @@
+= While updating this file, update Java 8 Notes also parallelly
+
+- com.practise.java8 : Implementing sample behaviour to run a login in Java7
+
+* What if we can pass action instead of class of that action(Greeting)
+    ie. class:     public void greet(Greeting greeting) {
+                   greeting.perform();
+               }
+    Action:    public void greet(action) {
+                   action();
+               }
+
+We can achieve this using lambdas, using functions only. Not even methods of a class. only functions which works in isolation.
+---
+
+Similar to inline values i.e. String name = "Pratik";
+we can assign block of code to a variable.  i.e. aBlockOfCode = {
+                                                    .......
+                                                    .......
+                                                    .......
+                                                 }
+                                            i.e. aBlockOfCode = public void perform() {
+                                                    System.out.println("Print this message");
+                                                 }
+How??
+public/private/protected: Makes sense when a function is part of a class
+                                            i.e. aBlockOfCode =      void perform() {
+                                                    System.out.println("Print this message");
+                                                 }
+
+name: for a variable, only two things are there, name and value, we've already given name
+                                            i.e. aBlockOfCode =      void () {
+                                                    System.out.println("Print this message");
+                                                 }
+Return type: void(or anything else) not required, just look at body and guess what should be return type.
+Compiler is smart enough to understand what should be type
+                                            i.e. aBlockOfCode = () {
+                                                    System.out.println("Print this message");
+                                                 }
+A minor addition.
+                                            i.e. aBlockOfCode = () -> {
+                                                    System.out.println("Print this message");
+                                                 }
+Additionally, ONLY if body is single line, remove braces
+                                            i.e. aBlockOfCode = () -> System.out.println("Print this message");
+
+Examples:
+greetingFunction = () -> System.out.println("Hello World");
+
+functions can also have arguments:
+Q: doubleNumberFunction = public int double (int a) {
+        return a * 2;
+   }
+A.a: doubleNumberFunction = int double (int a) {
+             return a * 2;
+        }
+A.b: doubleNumberFunction = int (int a) {
+             return a * 2;
+        }
+A.c: doubleNumberFunction = (int a) {
+             return a * 2;
+        }
+A.d: doubleNumberFunction = (int a) -> {
+             return a * 2;
+        }
+It is one liner, so,
+A.e: doubleNumberFunction = (int a) -> return a * 2;
+
+
+Another one: addFunction = (int a, int b) -> a + b;
+
+One more:
+safeDivideFunction = (int a, int b) -> a/b;
+to make it safe, we'll add curley braces, because multiline
+safeDivideFunction = (int a, int b) -> {
+    if(b==0) return 0;
+    return a/b;
+};
+
+One more,
+stringLengthCountFunction = (String s) -> s.length();
+---
+
+
+Tutorial 8:
+Now what about type?? of variable greetingFunction().
+Check below example
+
+-  com.practise.java8Lambda : Implementing Lambda
+
