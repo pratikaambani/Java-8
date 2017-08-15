@@ -15,7 +15,7 @@ We can achieve this using lambdas, using functions only. Not even methods of a c
 
 Similar to inline values i.e. String name = "Pratik";
 we can assign block of code to a variable.  i.e. aBlockOfCode = {
-                                                    .......
+                                                     .......
                                                     .......
                                                     .......
                                                  }
@@ -88,3 +88,30 @@ Check below example
 
 -  com.practise.java8Lambda : Implementing Lambda
 
+Create Interface having exact 1 method  + same signature
+
+Now if created multiple methods in interface, compiler won't
+understand which one we are referring to.
+Rule: While using interface to declare lambda expression,
+interface should have only one method
+
+Line 10: Greeting helloWorldGreeting = new HelloWorldGreeting();
+Line 15: Greeting lyLambdaGreeting = () -> System.out.println("Print this message");
+
+both does same thing
+
+Lambda expressions kinda behaving like an implementation of interface. Actually it is a function.
+
+-  com.practise.java8LambdaInlineClass : Implementing inner classes
+
+class defined inside other class
+Though, Lambda is not replacement of Inner Classes.
+
+
+
+
+-  com.practise.typeinterface
+
+typeinterfaceexample
+
+Type Interface
