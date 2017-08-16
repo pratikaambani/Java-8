@@ -1,3 +1,5 @@
+= Lambda Expression Practise
+
 = While updating this file, update Java 8 Notes also parallelly
 
 - com.practise.java8 : Implementing sample behaviour to run a login in Java7
@@ -111,7 +113,20 @@ Though, Lambda is not replacement of Inner Classes.
 
 
 -  com.practise.typeinterface
-
-typeinterfaceexample
-
 Type Interface
+In example directly passed lambda value in interface
+Check examples how optimally we can write Lambdas
+
+----
+-  com.practise.runnable
+-  Example of using lambda in existing implementation
+
+
+Tutorial 12 : Functional Interface
+ - Interface who has method implementation
+ - Interface who has only 1 abstract method
+
+
+ - Interface created for lambda should be kept totally
+ separate than the ones for class creation
+----

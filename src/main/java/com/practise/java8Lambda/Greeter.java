@@ -1,7 +1,7 @@
 package com.practise.java8Lambda;
 
 /**
- * Created by AmbaniP on 15/08/2017.
+ * Created by AmbaniP on 11/08/2017.
  */
 public class Greeter {
 
@@ -17,8 +17,8 @@ public class Greeter {
         myLambdaGreeting.perform();
 
 //      2. Moved myAdd method to Greeting
-        MyAdd addFunction = (int a, int b) -> a+b;
-        System.out.println("addFunction: " +addFunction);
+        MyAdd addFunction = (int a, int b) -> a + b;
+        System.out.println("addFunction: " + addFunction);
     }
 
     public void greet(Greeting greeting) {

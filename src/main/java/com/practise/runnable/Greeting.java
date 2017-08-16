@@ -1,4 +1,4 @@
-package com.practise.java8;
+package com.practise.runnable;
 
 /**
  * Created by AmbaniP on 11/08/2017.
