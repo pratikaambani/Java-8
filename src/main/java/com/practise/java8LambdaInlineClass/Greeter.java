@@ -11,7 +11,6 @@ public class Greeter {
         //removing below after using inner class
         Greeting helloWorldGreeting = new HelloWorldGreeting();
         helloWorldGreeting.perform();
-
         Greeting myLambdaGreeting = () -> System.out.println("Print this message from lambda");
 
         Greeting innerClassGreeting = new Greeting() {

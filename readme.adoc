@@ -129,4 +129,10 @@ Tutorial 12 : Functional Interface
 
  - Interface created for lambda should be kept totally
  separate than the ones for class creation
+ - To ensure nobody adds more methods on such interfaces
+ use @FunctionalInterface, check inside Greeting Interface
+
 ----
+
+- package com.practise.unit1exercise;
+Example of implementation using 7 and 8
