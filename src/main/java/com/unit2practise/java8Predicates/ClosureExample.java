@@ -7,13 +7,19 @@ public class ClosureExample {
     public static void main(String args[]) {
         int a = 10;
         int b = 20;
+
+        //anonymous class
         doProcess(a, new Process() {
             @Override
             public void process(int i) {
-                b = 40;
+                //This is final value cannot be changed
+                //b = 40;
                 System.out.println("i: " +(i+b));
             }
         });
+
+        //replacing anonymous class with Lambda
+        doProcess(a, (i) -> System.out.println(i + b));
     }
 
     public static void doProcess(int i, Process p) {

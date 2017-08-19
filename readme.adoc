@@ -1,4 +1,4 @@
-= Lambda Expression Practise
+= Lambda Expression Practise - Koushik
 
 = While updating this file, update Java 8 Notes also parallelly
 
@@ -185,6 +185,43 @@ Seen in Java 7
 Class: ClosureExample
 Here process() is called inside doProcess()
 So value of newly created variable b is retrieved, compiler knows this values
-has to be taken into consideration
-BUT, if declared inside process(), story->
-Till java 7, it was allowed but
+have to be taken into consideration
+b cannot be modified inside process()
+
+Doubt: retaining both the methods will execute both of them, why?
+
+-----
+this reference in lamdba | not so frequently used
+Class: ThisReferenceExample
+
+doProcess, non static
+this refers to instance of inner class
+beavious of this is different with lambda than inner class
+-----------
+
+
+unit3practise package
+Method references and collections
+
+MethodReferenceExample1 class
+Method Reference Expression
+() -> printMessage() === ReferenceExample1::printMessage
+
+
+whenever without any perarmeter<->method i.e. () -> method()
+we can replace it with ReferenceExample1::printMessage
+--
+
+Foreach iteration:
+Combining collection with lambda in Java 8 --> Stream
+CollectionIterationExample
+
+External Iterators:
+Example 1: Simple for loop
+Example 2: for in loop
+
+Internal Iterators: Giving control to somebosy else
+Example 3: Simple for loop
+
+
+Streams:
