@@ -1,4 +1,4 @@
-package com.practise.unit1exercise;
+package com.unit1practise.unit1exercise;
 
 /**
  * Created by AmbaniP on 16/08/2017.
