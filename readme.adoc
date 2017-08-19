@@ -6,6 +6,25 @@
 Refer package for lambda exercises: com.unit1practise.
 - com.unit1practise.java8 : Implementing sample behaviour to run a login in Java7
 
+
+
+* Why Lambda required:
+- Enables functional programming
+- Readable and concise
+- Easier to use APIs and librabries
+- Enables support for parallel processing
+
+* This course:
+- Understanding Lambdas
+- Using Lambdas
+- Functional Interface
+- Mathod references
+- Collection improvements
+
+
+
+
+
 * What if we can pass action instead of class of that action(Greeting)
     ie. class:     public void greet(Greeting greeting) {
                    greeting.perform();
@@ -222,6 +241,70 @@ Example 2: for in loop
 
 Internal Iterators: Giving control to somebosy else
 Example 3: Simple for loop
+--
+
+Streams: A sequence of elements supporting sequential and parallel
+aggregate operations.
+- Separate than Lambda
+
+Ex. Collection
+1 2 3 4 5
+
+Now multiple people requires action on these 1 2 3 4 5 elements:
+
+StreamsExample:
+people.stream()
+.forEach(p -> System.out.println(p.getfName()));
+Now what if we want to add more mechanism.
+Use filter: it returns a stream consisting of elements of this stream
+            that match given predicate
+
+if fiter is true, it goes to second one
+        people.stream()
+                .filter(p -> p.getlName().startsWith("C"))
+                .forEach(p -> System.out.println(p.getfName()));
 
 
-Streams:
+A stream has always something that has resource.
+Stream has 3 things:
+1. Source: Contains informations/provides elements(people)
+2. Operations to be performed: filter
+3. Ternminal Condition: End oprtation(forEach)
+
+Example: Check extra acivities in StreamsExample class
+
+Termination: Adding count terminates stream, cant change
+anymore(more operations)
+
+ * Parallel Processing: In below example, stream takes control from us,
+        people.stream()
+                .filter(p -> p.getlName().startsWith("C"))
+                .forEach(p -> System.out.println(p.getfName()));
+Here different portions of collection can be handled in different
+cores(procesors) of multicore processor, USING:
+parallelStream()
+
+
+
+
+
+
+
+Trick:
+In iteration,
+
+for (FieldError fieldError : bindException.getBindingResult().getFieldErrors()) {
+    System.out.println(fieldError);
+    fields.add(fieldError.getField());
+    messages.add(fieldError.getDefaultMessage());
+}
+==
+for(A b : c) {
+    b
+}
+then lambda,
+
+bindException.getBindingResult().getFieldErrors().forEach(fieldError -> fields.add(fieldError.getField())) ;
+
+c.forEach(b -> b(with some operation))
+

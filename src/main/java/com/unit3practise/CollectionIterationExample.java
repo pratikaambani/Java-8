@@ -19,6 +19,7 @@ public class CollectionIterationExample {
                 new Person("Charles", "Dickens", 42)
         );
 
+/*
         //external iterator
         System.out.println("\n \n \n Using for loop");
         for(int i=0; i<people.size(); i++) {
@@ -31,6 +32,7 @@ public class CollectionIterationExample {
             System.out.println(p);
         }
         System.out.println("\n \n \n");
+*/
 
 
         //internal iterator
