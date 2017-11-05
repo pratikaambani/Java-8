@@ -308,3 +308,39 @@ bindException.getBindingResult().getFieldErrors().forEach(fieldError -> fields.a
 
 c.forEach(b -> b(with some operation))
 
+---------------------------------
+
+java.util.stream
+IntStream
+StreamsCollections
+
+
+Functional Interfaces:
+
+java.util.function
+
+Predicate:boolean valued
+BiPredicate:Represents a predicate (boolean-valued function) of two arguments.
+DoublePredicate: Represents a predicate (boolean-valued function) of one(double) valued argument
+LongPredicate: Represents a predicate (boolean-valued function) of one (long)valued argument.
+
+Supplier: Represents a supplier of results. Supplies valule.
+T get()
+public Integer getInteger() {
+    return new Random().nextInt();
+}
+
+Consumer: accepts a single input argument and returns no result. Consumes value.
+void accept()
+BiConsumer: accepts two input arguments and returns no result
+public void sum(Integer a, Integer b) {
+    System.out.println(a + b);
+}
+
+BiFunction: Represents a function that accepts two arguments and produces a result.
+
+DoubleToIntFunction: Represents a function that accepts a double-valued argument and produces an int-valued result.
+
+Function: Represents a function that accepts one argument and produces a result.
+
+
