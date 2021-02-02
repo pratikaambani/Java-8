@@ -5,7 +5,7 @@ package com.unit1practise.java8Lambda;
  */
 public class Greeter {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Greeter greeter = new Greeter();
         Greeting helloWorldGreeting = new HelloWorldGreeting();
         greeter.greet(helloWorldGreeting);
@@ -16,7 +16,7 @@ public class Greeter {
         System.out.println(myLambdaGreeting.toString());
         myLambdaGreeting.perform();
 
-//      2. Moved myAdd method to Greeting
+//      2. Moved myAdd interface to Greeting
         MyAdd addFunction = (int a, int b) -> a + b;
         System.out.println("addFunction: " + addFunction);
     }

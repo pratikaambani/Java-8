@@ -37,16 +37,11 @@ public class UsingPredicates {
         System.out.println("\n \n \n");
         System.out.println("People having firstname starting with P");
         performConditionally(people, p -> p.getfName().startsWith("p"));
-
     }
 
     //Using Predicate | Functional Interface |
     //perform, not print
     private static void performConditionally(List<Person> people, Predicate<Person> predicate) {
-        for (Person p : people) {
-            if (predicate.test(p)) {
-                System.out.println(p);
-            }
-        }
+        people.stream().filter(predicate::test).forEachOrdered(System.out::println);
     }
 }

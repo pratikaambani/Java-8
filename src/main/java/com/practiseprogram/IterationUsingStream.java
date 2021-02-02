@@ -12,9 +12,7 @@ public class IterationUsingStream {
     public static void main(String[] args) {
 
         List<Integer> myList = Arrays.asList(4, 6, 3, 68, 4, 37, 42, 85);
-
         System.out.println("summation without Stream: " +sumIterator(myList));
-
         System.out.println("summation with Stream: " +sumOfIterator(myList));
     }
 
