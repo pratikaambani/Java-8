@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * Created by AmbaniP on 19/08/2017.
  */
 public class StreamsExample {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         List<Person> people = Arrays.asList(
                 new Person("pratik", "ambani", 26),
                 new Person("Lewis", "Carroll", 25),
@@ -43,7 +43,5 @@ public class StreamsExample {
                 .filter(p -> p.getlName().startsWith("C"))
                 .count();
         System.out.println("countProcessInParallel: " + countProcessInParallel);
-
-
     }
 }

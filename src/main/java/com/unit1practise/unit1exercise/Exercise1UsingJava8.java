@@ -1,5 +1,6 @@
 package com.unit1practise.unit1exercise;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Exercise1UsingJava8 {
         );
 
         // 1. Sort list by name
-        Collections.sort(people, (p1, p2) -> p1.getlName().compareTo(p1.getlName()));
+        Collections.sort(people, (p1, p2) -> p1.getlName().compareTo(p2.getlName()));
 
         // 2. Create method that prints all elements in the list
         printConditionally(people, p -> true);

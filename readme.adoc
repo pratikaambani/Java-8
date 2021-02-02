@@ -4,21 +4,21 @@
 
 ----------------------------------------------
 Refer package for lambda exercises: com.unit1practise.
-- com.unit1practise.java8 : Implementing sample behaviour to run a login in Java7
+- com.unit1practise.java8 : Implementing sample behavior to run a logic in Java7
 
 
 
 * Why Lambda required:
 - Enables functional programming
 - Readable and concise
-- Easier to use APIs and librabries
+- Easier to use APIs and libraries
 - Enables support for parallel processing
 
 * This course:
 - Understanding Lambdas
 - Using Lambdas
 - Functional Interface
-- Mathod references
+- Method references
 - Collection improvements
 
 
@@ -94,7 +94,7 @@ Another one: addFunction = (int a, int b) -> a + b;
 
 One more:
 safeDivideFunction = (int a, int b) -> a/b;
-to make it safe, we'll add curley braces, because multiline
+to make it safe, we'll add curly braces, because multi line
 safeDivideFunction = (int a, int b) -> {
     if(b==0) return 0;
     return a/b;
@@ -165,7 +165,7 @@ package com.unit2practise.java8Predicates;
 Using Functional Interface
 https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
 Same example of previous package where Condition interface is kinda overhead.
-Java 8 has some OOTB componenets which can be used to perform such scenarios
+Java 8 has some OOTB components which can be used to perform such scenarios
 where returns true/false, prints output
 import java.util.function. package
 This package contains test()
@@ -175,7 +175,7 @@ return a boolean, no need to create interface
 Use this test() method of predicate
  * Represents a predicate (boolean-valued function) of one argument.
 Other methods of Predicate: and, isEqual, negate, or, test
-Codition interface nomore required
+Condition interface no more required
 
 But, how it worked even though interface contained multiple methods?
 Reason: only test method is abstract, to use lambda only 1 method should be abstract
@@ -215,7 +215,7 @@ Class: ThisReferenceExample
 
 doProcess, non static
 this refers to instance of inner class
-beavious of this is different with lambda than inner class
+beaviour of this is different with lambda than inner class
 -----------
 
 
@@ -227,7 +227,7 @@ Method Reference Expression
 () -> printMessage() === ReferenceExample1::printMessage
 
 
-whenever without any perarmeter<->method i.e. () -> method()
+whenever without any pararmeter<->method i.e. () -> method()
 we can replace it with ReferenceExample1::printMessage
 --
 
@@ -239,7 +239,7 @@ External Iterators:
 Example 1: Simple for loop
 Example 2: for in loop
 
-Internal Iterators: Giving control to somebosy else
+Internal Iterators: Giving control to some body else
 Example 3: Simple for loop
 --
 
@@ -269,9 +269,9 @@ A stream has always something that has resource.
 Stream has 3 things:
 1. Source: Contains informations/provides elements(people)
 2. Operations to be performed: filter
-3. Ternminal Condition: End oprtation(forEach)
+3. Terminal Condition: End operation(forEach)
 
-Example: Check extra acivities in StreamsExample class
+Example: Check extra activities in StreamsExample class
 
 Termination: Adding count terminates stream, cant change
 anymore(more operations)
@@ -281,7 +281,7 @@ anymore(more operations)
                 .filter(p -> p.getlName().startsWith("C"))
                 .forEach(p -> System.out.println(p.getfName()));
 Here different portions of collection can be handled in different
-cores(procesors) of multicore processor, USING:
+cores(processors) of multi core processor, USING:
 parallelStream()
 
 
@@ -344,3 +344,5 @@ DoubleToIntFunction: Represents a function that accepts a double-valued argument
 Function: Represents a function that accepts one argument and produces a result.
 
 
+Why default and static methods:
+https://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method

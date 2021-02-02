@@ -5,11 +5,9 @@ package com.unit1practise.java8;
  */
 public class Greeter {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Greeter greeter = new Greeter();
         greeter.greet(new HelloWorldGreeting());
-
-
     }
 
     public void greet(Greeting greeting) {

@@ -5,7 +5,7 @@ package com.unit1practise.typeinterface;
  */
 public class Greeter {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Greeter greeter = new Greeter();
 
         StringLengthLambda myLambda1 = (String s) -> s.length();
