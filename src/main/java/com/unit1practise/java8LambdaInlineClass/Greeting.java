@@ -1,4 +1,4 @@
-package com.practise.typeinterface;
+package com.unit1practise.java8LambdaInlineClass;
 
 /**
  * Created by AmbaniP on 11/08/2017.

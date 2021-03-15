@@ -1,4 +1,4 @@
-package com.practise.java8;
+package com.unit1practise.java8;
 
 /**
  * Created by AmbaniP on 11/08/2017.

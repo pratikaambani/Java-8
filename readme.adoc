@@ -1,8 +1,29 @@
-= Lambda Expression Practise
+= Lambda Expression Practise - Koushik
 
 = While updating this file, update Java 8 Notes also parallelly
 
-- com.practise.java8 : Implementing sample behaviour to run a login in Java7
+----------------------------------------------
+Refer package for lambda exercises: com.unit1practise.
+- com.unit1practise.java8 : Implementing sample behaviour to run a login in Java7
+
+
+
+* Why Lambda required:
+- Enables functional programming
+- Readable and concise
+- Easier to use APIs and librabries
+- Enables support for parallel processing
+
+* This course:
+- Understanding Lambdas
+- Using Lambdas
+- Functional Interface
+- Mathod references
+- Collection improvements
+
+
+
+
 
 * What if we can pass action instead of class of that action(Greeting)
     ie. class:     public void greet(Greeting greeting) {
@@ -88,7 +109,7 @@ Tutorial 8:
 Now what about type?? of variable greetingFunction().
 Check below example
 
--  com.practise.java8Lambda : Implementing Lambda
+-  com.unit1practise.java8Lambda : Implementing Lambda
 
 Create Interface having exact 1 method  + same signature
 
@@ -104,7 +125,7 @@ both does same thing
 
 Lambda expressions kinda behaving like an implementation of interface. Actually it is a function.
 
--  com.practise.java8LambdaInlineClass : Implementing inner classes
+-  com.unit1practise.java8LambdaInlineClass : Implementing inner classes
 
 class defined inside other class
 Though, Lambda is not replacement of Inner Classes.
@@ -112,13 +133,13 @@ Though, Lambda is not replacement of Inner Classes.
 
 
 
--  com.practise.typeinterface
+-  com.unit1practise.typeinterface
 Type Interface
 In example directly passed lambda value in interface
 Check examples how optimally we can write Lambdas
 
 ----
--  com.practise.runnable
+-  com.unit1practise.runnable
 -  Example of using lambda in existing implementation
 
 
@@ -129,4 +150,197 @@ Tutorial 12 : Functional Interface
 
  - Interface created for lambda should be kept totally
  separate than the ones for class creation
+ - To ensure nobody adds more methods on such interfaces
+ use @FunctionalInterface, check inside Greeting Interface
+
 ----
+ - package com.unit1practise.unit1exercise;
+ Example of implementation using 7 and 8
+ Refer three examples
+
+------------------------------------------------------------------------------------
+Refer package for Predicates: package com.unit2practise.;
+
+package com.unit2practise.java8Predicates;
+Using Functional Interface
+https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
+Same example of previous package where Condition interface is kinda overhead.
+Java 8 has some OOTB componenets which can be used to perform such scenarios
+where returns true/false, prints output
+import java.util.function. package
+This package contains test()
+
+So if we ever need a lambda expression that
+return a boolean, no need to create interface
+Use this test() method of predicate
+ * Represents a predicate (boolean-valued function) of one argument.
+Other methods of Predicate: and, isEqual, negate, or, test
+Codition interface nomore required
+
+But, how it worked even though interface contained multiple methods?
+Reason: only test method is abstract, to use lambda only 1 method should be abstract
+
+package com.unit2practise.java8Predicates.UsingConsumer;
+Represent operation that accepts single input argument and returns no result
+Whole method also eliminated using this, check class
+
+BiConsumer: andThen
+BiFunction: andThen
+
+
+Exception Handling in Lambda and BiConsumer
+package com.unit2practise.java8Predicates.exceptionHandling;
+We don't know which exception can be thrown id used try catch inside process() implementation
+
+use where process is called: but it //doesn't look elegant
+
+create separate lambda(wrapper lambda) having exception and u
+
+In example, given is Integer type, making it generic would handle all Bigeneric exceptions
+-----
+
+Closures:
+Seen in Java 7
+Class: ClosureExample
+Here process() is called inside doProcess()
+So value of newly created variable b is retrieved, compiler knows this values
+have to be taken into consideration
+b cannot be modified inside process()
+
+Doubt: retaining both the methods will execute both of them, why?
+
+-----
+this reference in lamdba | not so frequently used
+Class: ThisReferenceExample
+
+doProcess, non static
+this refers to instance of inner class
+beavious of this is different with lambda than inner class
+-----------
+
+
+unit3practise package
+Method references and collections
+
+MethodReferenceExample1 class
+Method Reference Expression
+() -> printMessage() === ReferenceExample1::printMessage
+
+
+whenever without any perarmeter<->method i.e. () -> method()
+we can replace it with ReferenceExample1::printMessage
+--
+
+Foreach iteration:
+Combining collection with lambda in Java 8 --> Stream
+CollectionIterationExample
+
+External Iterators:
+Example 1: Simple for loop
+Example 2: for in loop
+
+Internal Iterators: Giving control to somebosy else
+Example 3: Simple for loop
+--
+
+Streams: A sequence of elements supporting sequential and parallel
+aggregate operations.
+- Separate than Lambda
+
+Ex. Collection
+1 2 3 4 5
+
+Now multiple people requires action on these 1 2 3 4 5 elements:
+
+StreamsExample:
+people.stream()
+.forEach(p -> System.out.println(p.getfName()));
+Now what if we want to add more mechanism.
+Use filter: it returns a stream consisting of elements of this stream
+            that match given predicate
+
+if fiter is true, it goes to second one
+        people.stream()
+                .filter(p -> p.getlName().startsWith("C"))
+                .forEach(p -> System.out.println(p.getfName()));
+
+
+A stream has always something that has resource.
+Stream has 3 things:
+1. Source: Contains informations/provides elements(people)
+2. Operations to be performed: filter
+3. Ternminal Condition: End oprtation(forEach)
+
+Example: Check extra acivities in StreamsExample class
+
+Termination: Adding count terminates stream, cant change
+anymore(more operations)
+
+ * Parallel Processing: In below example, stream takes control from us,
+        people.stream()
+                .filter(p -> p.getlName().startsWith("C"))
+                .forEach(p -> System.out.println(p.getfName()));
+Here different portions of collection can be handled in different
+cores(procesors) of multicore processor, USING:
+parallelStream()
+
+
+
+
+
+
+
+Trick:
+In iteration,
+
+for (FieldError fieldError : bindException.getBindingResult().getFieldErrors()) {
+    System.out.println(fieldError);
+    fields.add(fieldError.getField());
+    messages.add(fieldError.getDefaultMessage());
+}
+==
+for(A b : c) {
+    b
+}
+then lambda,
+
+bindException.getBindingResult().getFieldErrors().forEach(fieldError -> fields.add(fieldError.getField())) ;
+
+c.forEach(b -> b(with some operation))
+
+---------------------------------
+
+java.util.stream
+IntStream
+StreamsCollections
+
+
+Functional Interfaces:
+
+java.util.function
+
+Predicate:boolean valued
+BiPredicate:Represents a predicate (boolean-valued function) of two arguments.
+DoublePredicate: Represents a predicate (boolean-valued function) of one(double) valued argument
+LongPredicate: Represents a predicate (boolean-valued function) of one (long)valued argument.
+
+Supplier: Represents a supplier of results. Supplies valule.
+T get()
+public Integer getInteger() {
+    return new Random().nextInt();
+}
+
+Consumer: accepts a single input argument and returns no result. Consumes value.
+void accept()
+BiConsumer: accepts two input arguments and returns no result
+public void sum(Integer a, Integer b) {
+    System.out.println(a + b);
+}
+
+BiFunction: Represents a function that accepts two arguments and produces a result.
+
+DoubleToIntFunction: Represents a function that accepts a double-valued argument and produces an int-valued result.
+
+Function: Represents a function that accepts one argument and produces a result.
+
+
