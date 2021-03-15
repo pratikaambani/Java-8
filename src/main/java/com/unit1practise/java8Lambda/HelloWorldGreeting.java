@@ -1,4 +1,4 @@
-package com.practise.java8Lambda;
+package com.unit1practise.java8Lambda;
 
 /**
  * Created by AmbaniP on 11/08/2017.
