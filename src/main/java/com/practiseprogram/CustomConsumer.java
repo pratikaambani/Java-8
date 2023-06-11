@@ -3,12 +3,27 @@ package com.practiseprogram;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 /**
  * Created by Pratik Ambani on 5/11/2017.
  */
-public class ConsumerExample {
+public class CustomConsumer {
     public static void main(String[] args) {
+
+        consumer();
+
+        biConsumer();
+    }
+
+    private static void consumer() {
+        // Consumer to display a number
+        Consumer<Integer> display = a -> System.out.println(a);
+        // Implement display using accept()
+        display.accept(10);
+    }
+
+    private static void biConsumer() {
         Map<Integer, String> employees = new HashMap<>();
         employees.put(1, "A");
         employees.put(2, "B");

@@ -1,4 +1,4 @@
-package com.defaultmethod;
+package com.defaultstatic;
 
 public class AddressImpl implements IAddress1, IAddress2 {
 
@@ -23,8 +23,8 @@ public class AddressImpl implements IAddress1, IAddress2 {
     // but the only thing is implementing classes cannot override the behaviour of the static method.
     // This makes the system more standard instead of having each class its own implementation and introduction problems.
     int getPinCode() {
-        IAddress1.getPinCode();
-        IAddress2.getPinCode();
+        int A1 = IAddress1.getPinCode();
+        int A2 = IAddress2.getPinCode();
         return 382330;
     }
 

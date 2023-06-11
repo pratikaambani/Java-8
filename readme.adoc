@@ -347,3 +347,19 @@ Function: Represents a function that accepts one argument and produces a result.
 Why default and static methods:
 https://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method
 
+======================================================================
+
+Another example of default and static methods
+Refer to package: defaultstatic
+https://www.onlinetutorialspoint.com/java/default-static-methods-interface-java-8.html
+https://beginnersbook.com/2017/10/java-8-interface-changes-default-method-and-static-method/
+
+======================================================================
+
+Java8 DateTime API:
+Refer to package datetime
+
+======================================================================
+
+try with resource
+We don't need to close file.io operations
